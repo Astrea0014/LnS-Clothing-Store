@@ -1,0 +1,95 @@
+:root {
+  --navbar-background-color: #222;
+  --navbar-foreground-color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Mobile */
+
+.uniform-nav {
+  width: 100%;
+}
+
+.logo-header {
+  display: grid;
+  grid-template-columns: 4.5rem auto 4.5rem;
+
+  align-items: center;
+
+  background-color: var(--navbar-background-color);
+  color: var(--navbar-foreground-color);
+
+}
+
+.hamburger-button {
+  margin: 0.4rem;
+}
+
+.hamburger-button span {
+  display: block;
+  box-sizing: content-box;
+
+  background-color: var(--navbar-foreground-color);
+
+  width: 3rem;
+  height: 0.4rem;
+  margin: 0.4rem;
+
+  border-radius: 1rem;
+}
+
+main {
+  /* TEMPORARY */
+  height: 2000px;
+}
+
+.menu-items {
+  visibility: visible;
+
+  padding: 0.4rem;
+
+  background-color: var(--navbar-background-color);
+  width: 100%;
+}
+
+.menu-items a {
+  display: block;
+  margin: 0.4rem auto;
+
+  color: var(--navbar-foreground-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.logo {
+  font-family: 'Playwrite CU';
+  font-size: 1.3em;
+
+  justify-self: center;
+}
+
+/* Tablet */
+@media only screen and (min-width: 600px) {
+  .uniform-nav {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .hamburger-button {
+    display: none;
+  }
+  
+  .menu-items {
+    position: initial;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 769px) {
+
+}
