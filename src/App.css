@@ -1,6 +1,14 @@
 :root {
   --navbar-background-color: #222;
   --navbar-foreground-color: white;
+
+  --page-contrast-color-1: #DDD;
+
+  --page-black-on-white-font-color: #333;
+
+  --font-playwrite-cu: "Playwrite CU", cursive;
+  --font-geist-mono: "Geist Mono", monospace;
+  --font-hk-grotesk: "Hanken Grotesk", sans-serif;
 }
 
 * {
@@ -23,7 +31,6 @@
 
   background-color: var(--navbar-background-color);
   color: var(--navbar-foreground-color);
-
 }
 
 .hamburger-button {
@@ -43,34 +50,150 @@
   border-radius: 1rem;
 }
 
-main {
-  /* TEMPORARY */
-  height: 2000px;
+.logo {
+  font-family: var(--font-playwrite-cu);
+  font-size: 1.3em;
+
+  justify-self: center;
+
+  z-index: 2;
 }
 
 .menu-items {
-  visibility: visible;
+  position: absolute;
+  margin-top: -0.8rem;
 
+  width: 100%;
   padding: 0.4rem;
+  
+  z-index: 1;
+
+  /* transition: height 0.75s ease-out; */
 
   background-color: var(--navbar-background-color);
-  width: 100%;
 }
 
 .menu-items a {
   display: block;
   margin: 0.4rem auto;
 
-  color: var(--navbar-foreground-color);
   text-decoration: none;
   font-size: 1.2rem;
+
+  width: fit-content;
 }
 
-.logo {
-  font-family: 'Playwrite CU';
-  font-size: 1.3em;
+.closed {
+  height: 0;
+}
 
-  justify-self: center;
+.closed * {
+  color: transparent;
+}
+
+.open {
+  height: 7.5rem;
+}
+
+.open * {
+  color: var(--navbar-foreground-color);
+}
+
+.content-carousel {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.carousel-item {
+  display: grid;
+  height: 35rem;
+  max-height: 80vh;
+}
+
+.carousel-item > * {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.carousel-item picture {
+  display: block;
+  position: relative;
+}
+
+.carousel-item picture, .carousel-item picture * {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item picture * {
+  object-position: center top;
+  object-fit: cover;
+}
+
+.collection-header-container {
+  color: white;
+  z-index: 1;
+
+  margin: 2rem;
+  margin-top: auto;
+}
+
+.collection-header-container p {
+  font-size: 2rem;
+}
+
+.collection-name-label {
+  font-family: var(--font-playwrite-cu);
+}
+
+.collection-label {
+  font-family: var(--font-geist-mono);
+  font-weight: bold;
+
+  width: fit-content;
+  margin-left: auto;
+}
+
+@media only screen and (min-width: 400px) {
+  .collection-label {
+    /* Having the labels scissored at > 400px viewport width looks odd */
+    margin-left: 0;
+  }
+}
+
+.divider {
+  display: block;
+
+  height: 0.2rem;
+  margin: 0 1rem;
+  margin-top: 1.8rem;
+
+  background-color: var(--page-contrast-color-1);
+  border-radius: 20px;
+}
+
+.suggestions {
+  font-family: var(--font-hk-grotesk);
+  color: var(--page-black-on-white-font-color);
+}
+
+.suggestions h1 {
+
+}
+
+.suggestions article {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+.on-sale-item {
+  display: grid;
+  width: 10rem;
+}
+
+.on-sale-item img {
+  width: inherit;
 }
 
 /* Tablet */
